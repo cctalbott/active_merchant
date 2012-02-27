@@ -22,9 +22,11 @@ module ActiveMerchant #:nodoc:
       end
 
       private
-      def split(response)
-        response.split(',')
-      end
+      #def split(response)
+      #  response.split(',')
+      #  response.split('|')
+      #  response[1..-2].split(/\$,\$/)
+      #end
     end
   end
 end
