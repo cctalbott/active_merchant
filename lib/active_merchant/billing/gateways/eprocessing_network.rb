@@ -22,9 +22,13 @@ module ActiveMerchant #:nodoc:
       end
 
       private
+      # some options in case response needs to be split differently
       #def split(response)
+      # like securepay, by comma
       #  response.split(',')
+      # by pipe
       #  response.split('|')
+      # like authorize.net and eprocessing_network
       #  response[1..-2].split(/\$,\$/)
       #end
     end
