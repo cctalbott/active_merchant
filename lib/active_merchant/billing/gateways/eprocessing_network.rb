@@ -3,8 +3,7 @@ require File.dirname(__FILE__) + '/authorize_net'
 module ActiveMerchant #:nodoc:
   module Billing #:nodoc:
     class EprocessingNetworkGateway < AuthorizeNetGateway
-      #self.live_url = self.test_url = 'https://www.eProcessingNetwork.Com/cgi-bin/an/order.pl'
-      self.live_url = self.test_url = 'https://www.eprocessingnetwork.com/cgi-bin/Reflect/transact.pl?email=clint.talbott@lonestarpayments.com'
+      self.live_url = self.test_url = 'https://www.eProcessingNetwork.Com/cgi-bin/an/order.pl'
 
       self.homepage_url = 'http://www.eprocessingnetwork.com/'
       self.display_name = 'eProcessingNetwork'
