@@ -1238,8 +1238,6 @@ module ActiveMerchant #:nodoc:
         case
         when payment_method[:method].kind_of?(ActiveMerchant::Billing::CreditCard)
           build_tag soap, :string, 'CardNumber', payment_method[:method].number
-          #build_tag soap, :string, 'CardExpiration',
-          #  "#{payment_method[:method].year}-#{"%02d" % payment_method[:method].month}"
           build_tag soap, :string, 'CardExpiration',
             "#{"%02d" % payment_method[:method].month}#{payment_method[:method].year}"
           if options[:billing_address]
@@ -1320,10 +1318,8 @@ module ActiveMerchant #:nodoc:
       def build_credit_card_data(soap, options)
         soap.CreditCardData 'xsi:type' => "ns1:CreditCardData" do |soap|
           build_tag soap, :string, 'CardNumber', options[:payment_method].number
-          #build_tag soap, :string, 'CardExpiration',
-          #  "#{options[:payment_method].year}-#{"%02d" % options[:payment_method].month}"
           build_tag soap, :string, 'CardExpiration',
-            "#{"%02d" % payment_method[:method].month}#{payment_method[:method].year}"
+            "#{"%02d" % options[:payment_method].month}#{options[:payment_method].year}"
           if options[:billing_address]
             build_tag soap, :string, 'AvsStreet', options[:billing_address][:address1]
             build_tag soap, :string, 'AvsZip', options[:billing_address][:zip]
