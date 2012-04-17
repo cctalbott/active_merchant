@@ -136,6 +136,11 @@ inspire:
   login: demo
   password: password
 
+itransact:
+  login: API_ACCESS_USERNAME
+  password: API_ACCESS_KEY
+  gateway_id: GATEWAY_ID
+
 jetpay:
   login: TESTTERMINAL
 
@@ -166,6 +171,10 @@ modern_payments:
 moneris:
   login: store1
   password: yesguy
+
+moneris_us:
+  login: monusqa002
+  password: qatoken
 
 #Working credentials, no need to replace
 nab_transact:
@@ -479,6 +488,10 @@ viaklix:
   password: PASSWORD
   user: USER
 
+vindicia:
+  login: LOGIN
+  password: PASSWORD
+  
 # Working test credentials, no need to replace
 wirecard:
   login: 56500
