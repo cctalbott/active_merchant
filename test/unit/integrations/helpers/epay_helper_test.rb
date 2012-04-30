@@ -1,29 +1,28 @@
 require 'test_helper'
 
-class QuickpayHelperTest < Test::Unit::TestCase
+class EpayHelperTest < Test::Unit::TestCase
   include ActiveMerchant::Billing::Integrations
   
   def setup
-    @helper = Quickpay::Helper.new('order-500','24352435', :amount => 500, :currency => 'USD')
-    @helper.md5secret "mysecretmd5string"
+    @helper = Epay::Helper.new('order-500','99999999', :amount => 500, :currency => 'DKK')
+    @helper.md5secret "secretmd5"
     @helper.return_url 'http://example.com/ok'
     @helper.cancel_return_url 'http://example.com/cancel'
     @helper.notify_url 'http://example.com/notify'
   end
  
   def test_basic_helper_fields
-    assert_field 'merchant', '24352435'
+    assert_field 'merchantnumber', '99999999'
     assert_field 'amount', '500'
-    assert_field 'ordernumber', 'order500'
+    assert_field 'orderid', 'order500'
   end
   
   def test_generate_md5string
-    assert_equal '3authorize24352435daorder500500USDhttp://example.com/okhttp://example.com/cancelhttp://example.com/notify01mysecretmd5string', 
-                 @helper.generate_md5string
+    assert_equal 'http://example.com/ok500http://example.com/notifyhttp://example.com/cancelDKK099999999order5003secretmd5', @helper.generate_md5string
   end
   
-  def test_generate_md5check
-    assert_equal '3dc7b51567c4911cc38511f796773366', @helper.generate_md5check
+  def test_generate_md5hash
+    assert_equal '251c2f80d1dcd120a87a2480025714cb', @helper.generate_md5hash
   end
   
   def test_unknown_mapping
