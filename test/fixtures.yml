@@ -105,6 +105,11 @@ exact:
   login: "A00427-01"
   password: testus
 
+# Working credentials, no need to replace
+fat_zebra:
+  username: TEST
+  token: TEST
+
 federated_canada:
   login: demo
   password: password
@@ -175,6 +180,10 @@ merchant_ware:
  password:
  name:
 
+metrics_global:
+  login: 'demo'
+  password: 'password'
+
 # Working credentials, no need to replace
 migs_purchase: # MiGS gateway for purchase mode
   login: TESTANZTEST3
@@ -213,7 +222,7 @@ nab_transact:
 nab_transact_card_acceptor:
   login: XYZ0010
   password: abcd1234
-  
+
 netaxept:
   login: LOGIN
   password: PASSWORD
