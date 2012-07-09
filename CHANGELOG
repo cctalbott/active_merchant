@@ -1,5 +1,16 @@
 = ActiveMerchant CHANGELOG
 
+== Version 1.26.0 (July 6, 2012)
+
+* Orbital gateway: fix broken requests by ensuring the order of XML elements matches their DTD [Soleone]
+* CyberSource gateway: clean up formatting [ntalbott]
+* Netbilling gateway: Add refund/credit/void support [ntalbott]
+* Add PayGate XML gateway [rubyisbeautiful]
+* Add PayWay gateway [BenZhang]
+* PayWay gateway: Tweaks to make more ActiveMerchant like [ntalbott]
+* Netbilling gateway: Fix error handling [ntalbott]
+* Netbilling gateway: Add refund/credit/void support [zenom, ntalbott]
+
 == Version 1.25.0 (July 3, 2012)
 
 * eWAY gateway: Add support for Diners Club cards [Soleone]
